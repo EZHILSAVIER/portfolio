@@ -13,7 +13,7 @@
   'use strict';
 
   // Configuration
-  const CHAT_URL = 'http://localhost:3000'; // Change to production URL after deployment
+  const CHAT_URL = 'https://ezhil-savier-portfolio.netlify.app'; // Change to production URL after deployment
 
   // Create floating button
   const btn = document.createElement('button');
