@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ezhil Savier S — AI &amp; Data Science Engineer</title>
+  <meta name="description" content="Portfolio of Ezhil Savier S — AI & Data Science Engineer specializing in Machine Learning, NLP, and Computer Vision. Building intelligent systems that solve real-world problems." />
+  <meta name="keywords" content="AI Engineer, Machine Learning, NLP, Computer Vision, Data Science, Portfolio" />
+  <meta name="author" content="Ezhil Savier S" />
+  <meta property="og:title" content="Ezhil Savier S — AI & Data Science Engineer" />
+  <meta property="og:description" content="Intelligence with Intent — An AI graduate who doesn't just build models, but solves real-world problems end-to-end." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- tsParticles -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Noise Overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- Background Neural Net SVG -->
+  <div class="neural-bg" id="neuralBg">
+    <svg width="100%" height="100%" viewBox="0 0 1440 900" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#00F5D4" stop-opacity="0.15" />
+          <stop offset="100%" stop-color="#7B2FBE" stop-opacity="0.08" />
+        </linearGradient>
+      </defs>
+      <g class="neural-lines" stroke="url(#lineGrad)" stroke-width="0.5" fill="none">
+        <path d="M0,200 Q360,100 720,250 T1440,200" />
+        <path d="M0,400 Q360,300 720,450 T1440,400" />
+        <path d="M0,600 Q360,500 720,650 T1440,600" />
+        <path d="M0,100 Q200,300 500,150 T1000,300 T1440,100" />
+        <path d="M0,700 Q400,500 800,700 T1440,500" />
+        <path d="M200,0 Q300,300 200,600 T400,900" />
+        <path d="M600,0 Q700,200 600,500 T800,900" />
+        <path d="M1000,0 Q1100,300 1000,600 T1200,900" />
+      </g>
+    </svg>
+  </div>
+
+  <!-- ======================== HERO ======================== -->
+  <section class="hero" id="hero">
+    <div id="heroParticles" class="hero-particles"></div>
+    <div class="hero-content">
+      <div class="hero-name-wrapper">
+        <h1 class="hero-name glitch" data-text="EZHIL SAVIER">
+          <span class="scanline"></span>
+          EZHIL SAVIER
+        </h1>
+      </div>
+      <div class="hero-subtitle">
+        <span class="subtitle-prefix">&gt; </span>
+        <span class="typewriter-text" id="typewriterText"></span>
+        <span class="typewriter-cursor">█</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#projects" class="cta-btn cta-primary" id="ctaProjects">
+          <span class="btn-text">VIEW PROJECTS</span>
+          <span class="btn-cursor">_</span>
+        </a>
+        <a href="https://drive.google.com/file/d/1XFAHt3sR-B6y0H3qiQFi-8ZF-xMo-Dw7/view?usp=drive_link" class="cta-btn cta-secondary" id="ctaResume" target="_blank" rel="noopener">
+          <span class="btn-text">VIEW RESUME</span>
+          <span class="btn-cursor">_</span>
+        </a>
+      </div>
+      <div class="hero-cta-human">
+        <a href="#about" class="cta-btn cta-human" id="ctaHuman">
+          <span class="btn-text">THE HUMAN BEHIND THE WORK</span>
+          <span class="btn-cursor">_</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-terminal" id="heroTerminal">
+      <div class="terminal-header">
+        <span class="terminal-dot red"></span>
+        <span class="terminal-dot yellow"></span>
+        <span class="terminal-dot green"></span>
+        <span class="terminal-title">ezhil@portfolio:~</span>
+      </div>
+      <div class="terminal-body">
+        <div class="terminal-line" id="termLine1"></div>
+        <div class="terminal-line" id="termLine2"></div>
+        <div class="terminal-line" id="termLine3"></div>
+        <div class="terminal-line status-ready" id="termLine4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== ABOUT ======================== -->
+  <section class="section about" id="about">
+    <div class="section-label"><span>01</span> IDENTITY</div>
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="profile-container">
+          <div class="profile-glow"></div>
+          <div class="profile-frame" id="profileFrame">
+            <!-- Original photo (base layer) -->
+            <img src="profile.png" alt="Ezhil Savier S" class="profile-img profile-img-real" id="profileReal" />
+            <!-- Ghibli art drawn on canvas — pixel-level erase on cursor touch -->
+            <canvas id="ghibliCanvas" class="profile-canvas"></canvas>
+            <!-- Floating Ghibli sparkles -->
+            <div class="ghibli-sparkles" aria-hidden="true">
+              <span class="sparkle s1"></span>
+              <span class="sparkle s2"></span>
+              <span class="sparkle s3"></span>
+              <span class="sparkle s4"></span>
+              <span class="sparkle s5"></span>
+            </div>
+            <div class="profile-scanline"></div>
+          </div>
+          <div class="profile-label">EZHIL SAVIER S</div>
+        </div>
+        <div class="radar-mini">
+          <canvas id="radarChart" width="280" height="280"></canvas>
+        </div>
+      </div>
+      <div class="about-text">
+        <h2 class="section-title">About <span class="accent-cyan">Me</span></h2>
+        <p class="about-bio">
+          I build AI systems that solve real-world problems — from catching phishing emails to reading human emotions in real time. I'm a B.Tech AI & Data Science graduate with a passion for crafting intelligent solutions that go beyond the lab.
+        </p>
+        <p class="about-bio">
+          But I'm not just about code. I've coordinated national-level events for 500+ participants, led class committees, and managed SLA-driven operations. I think in systems — whether it's a neural network or a team workflow.
+        </p>
+        <p class="about-bio accent-quote">
+          "Intelligence with Intent" — that's how I approach everything.
+        </p>
+      </div>
+    </div>
+    <div class="skills-ticker">
+      <div class="ticker-track">
+        <span>Python</span><span>·</span>
+        <span>Scikit-learn</span><span>·</span>
+        <span>Deep Learning</span><span>·</span>
+        <span>NLP</span><span>·</span>
+        <span>TensorFlow</span><span>·</span>
+        <span>Docker</span><span>·</span>
+        <span>SQL</span><span>·</span>
+        <span>REST APIs</span><span>·</span>
+        <span>Computer Vision</span><span>·</span>
+        <span>NumPy</span><span>·</span>
+        <span>Pandas</span><span>·</span>
+        <span>GitHub</span><span>·</span>
+        <span>Python</span><span>·</span>
+        <span>Scikit-learn</span><span>·</span>
+        <span>Deep Learning</span><span>·</span>
+        <span>NLP</span><span>·</span>
+        <span>TensorFlow</span><span>·</span>
+        <span>Docker</span><span>·</span>
+        <span>SQL</span><span>·</span>
+        <span>REST APIs</span><span>·</span>
+        <span>Computer Vision</span><span>·</span>
+        <span>NumPy</span><span>·</span>
+        <span>Pandas</span><span>·</span>
+        <span>GitHub</span><span>·</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== PROJECTS ======================== -->
+  <section class="section projects" id="projects">
+    <div class="section-label"><span>02</span> PROJECTS</div>
+    <h2 class="section-title center">The <span class="accent-cyan">Work</span></h2>
+    <div class="projects-grid">
+
+      <!-- PhishGuard -->
+      <div class="project-card" id="cardPhishGuard">
+        <div class="card-bg matrix-bg">
+          <canvas id="matrixCanvas"></canvas>
+        </div>
+        <div class="card-content">
+          <div class="card-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32 4L8 16v16c0 14.4 10.24 27.84 24 32 13.76-4.16 24-17.6 24-32V16L32 4z" stroke="#00F5D4" stroke-width="2" fill="none"/>
+              <circle cx="32" cy="28" r="8" stroke="#00F5D4" stroke-width="2" fill="none"/>
+              <path d="M32 20v16M24 28h16" stroke="#00F5D4" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="card-category">Cybersecurity · ML · NLP</div>
+          <h3 class="card-title">PhishGuard</h3>
+          <p class="card-desc">AI-powered email phishing detection using NLP pipelines and ML classifiers to identify threat patterns in real-time.</p>
+          <div class="card-tags">
+            <span>Scikit-learn</span>
+            <span>TF-IDF</span>
+            <span>Python</span>
+            <span>Tokenization</span>
+          </div>
+          <div class="card-pipeline">
+            <div class="pipeline-step">Email Input</div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-step">NLP Parsing</div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-step">ML Classifier</div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-step highlight">Threat Alert</div>
+          </div>
+          <a href="https://github.com/EZHILSAVIER/phishguard" class="card-link" target="_blank" rel="noopener">VIEW PROJECT <span>→</span></a>
+        </div>
+      </div>
+
+      <!-- Sentient Shopper -->
+      <div class="project-card" id="cardSentient">
+        <div class="card-bg gradient-mesh-bg"></div>
+        <div class="card-content">
+          <div class="card-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="26" r="14" stroke="#7B2FBE" stroke-width="2" fill="none"/>
+              <ellipse cx="26" cy="24" rx="2.5" ry="3" fill="#7B2FBE"/>
+              <ellipse cx="38" cy="24" rx="2.5" ry="3" fill="#7B2FBE"/>
+              <path d="M24 32c3 4 13 4 16 0" stroke="#7B2FBE" stroke-width="1.5" fill="none"/>
+              <path d="M10 22h-4M54 22h4M16 10l-3-3M48 10l3-3" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M18 46l-4 10h36l-4-10" stroke="#7B2FBE" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <div class="card-category">Emotion AI · Computer Vision</div>
+          <h3 class="card-title">Sentient Shopper</h3>
+          <p class="card-desc">Emotion-aware recommendation engine using deep learning CV to detect user sentiment and personalize product suggestions.</p>
+          <div class="card-tags">
+            <span>Deep Learning</span>
+            <span>CV</span>
+            <span>Collaborative Filtering</span>
+            <span>Predictive Analytics</span>
+          </div>
+          <div class="card-pipeline emotion-pipeline">
+            <div class="pipeline-step">Face Scan</div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-step">Emotion Label</div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-step highlight-violet">Recommendation</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MemoSnap -->
+      <div class="project-card" id="cardMemoSnap">
+        <div class="card-bg polaroid-bg"></div>
+        <div class="card-content">
+          <div class="card-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="14" width="44" height="36" rx="4" stroke="#F5A623" stroke-width="2" fill="none"/>
+              <circle cx="32" cy="30" r="10" stroke="#F5A623" stroke-width="2" fill="none"/>
+              <circle cx="32" cy="30" r="4" fill="#F5A623" opacity="0.3"/>
+              <rect x="42" y="18" width="6" height="4" rx="1" fill="#F5A623" opacity="0.5"/>
+              <path d="M28 54l4-6 4 6" stroke="#00F5D4" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M36 52h8" stroke="#00F5D4" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="card-category">Full-Stack · Cloud</div>
+          <h3 class="card-title">MemoSnap</h3>
+          <p class="card-desc">Cloud-powered photo journal platform with intuitive capture, tagging, and sharing — blending nostalgia with modern tech.</p>
+          <div class="card-tags">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>Cloud Storage</span>
+            <span>REST API</span>
+          </div>
+          <div class="card-pipeline">
+            <div class="pipeline-step">Capture</div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-step">Process</div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-step highlight-amber">Cloud Sync</div>
+          </div>
+          <a href="https://github.com/EZHILSAVIER/memosnap" class="card-link" target="_blank" rel="noopener">VIEW PROJECT <span>→</span></a>
+        </div>
+      </div>
+
+      <!-- TrustCart -->
+      <div class="project-card" id="cardTrustCart">
+        <div class="card-bg compliance-scan-bg">
+          <canvas id="complianceCanvas"></canvas>
+        </div>
+        <div class="card-content">
+          <div class="card-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32 4L8 16v16c0 14.4 10.24 27.84 24 32 13.76-4.16 24-17.6 24-32V16L32 4z" stroke="#E53E3E" stroke-width="2" fill="none"/>
+              <path d="M22 24h2l2 8h12l2-8h2" stroke="#E53E3E" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <circle cx="27" cy="34" r="1.5" fill="#E53E3E"/>
+              <circle cx="35" cy="34" r="1.5" fill="#E53E3E"/>
+              <path d="M29 28l3 3 5-5" stroke="#00F5D4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M14 40h36" stroke="#E53E3E" stroke-width="0.75" stroke-dasharray="3 2" opacity="0.6"/>
+            </svg>
+          </div>
+          <div class="card-category">LegalTech · AI · Full-Stack</div>
+          <h3 class="card-title">TrustCart</h3>
+          <p class="card-desc">AI-powered e-commerce compliance monitor that scrapes product listings and flags Indian legal violations in real time using Gemini 2.5 Flash, OpenCV watermark detection, and a weighted rule engine.</p>
+          <div class="card-tags">
+            <span>Gemini 2.5 Flash</span>
+            <span>FastAPI</span>
+            <span>React 19</span>
+            <span>OpenCV</span>
+            <span>MongoDB</span>
+            <span>CloudScraper</span>
+          </div>
+          <div class="card-pipeline compliance-pipeline">
+            <div class="pipeline-step">URL Input</div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-step">AI Scrape</div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-step">Rule Engine</div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-step highlight-danger">Risk Report</div>
+          </div>
+          <a href="https://github.com/EZHILSAVIER/trustcart" class="card-link card-link-danger" target="_blank" rel="noopener">VIEW PROJECT <span>→</span></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================== SKILLS ======================== -->
+  <section class="section skills" id="skills">
+    <div class="section-label"><span>03</span> TECH STACK</div>
+    <h2 class="section-title center">Skills & <span class="accent-cyan">Arsenal</span></h2>
+    <div class="skills-islands">
+
+      <div class="skill-island" data-delay="0">
+        <div class="island-icon">
+          <svg viewBox="0 0 40 40" fill="none"><path d="M8 8h10v10H8zM22 8h10v10H22zM8 22h10v10H8z" stroke="#00F5D4" stroke-width="1.5"/><path d="M22 22h10v10H22z" stroke="#7B2FBE" stroke-width="1.5"/></svg>
+        </div>
+        <h3>Languages</h3>
+        <div class="island-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL</span>
+        </div>
+      </div>
+
+      <div class="skill-island" data-delay="0.1">
+        <div class="island-icon">
+          <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="8" stroke="#00F5D4" stroke-width="1.5"/><circle cx="20" cy="20" r="3" fill="#7B2FBE" opacity="0.5"/><path d="M20 4v6M20 30v6M4 20h6M30 20h6" stroke="#00F5D4" stroke-width="1" stroke-linecap="round"/></svg>
+        </div>
+        <h3>AI / ML</h3>
+        <div class="island-tags">
+          <span class="skill-tag">Scikit-learn</span>
+          <span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">NumPy</span>
+          <span class="skill-tag">Pandas</span>
+        </div>
+      </div>
+
+      <div class="skill-island" data-delay="0.2">
+        <div class="island-icon">
+          <svg viewBox="0 0 40 40" fill="none"><path d="M6 30h28M10 24h6M16 18h8M24 24h6" stroke="#00F5D4" stroke-width="1.5" stroke-linecap="round"/><circle cx="20" cy="12" r="3" stroke="#7B2FBE" stroke-width="1.5"/></svg>
+        </div>
+        <h3>NLP</h3>
+        <div class="island-tags">
+          <span class="skill-tag">TF-IDF</span>
+          <span class="skill-tag">Tokenization</span>
+          <span class="skill-tag">Text Classification</span>
+        </div>
+      </div>
+
+      <div class="skill-island" data-delay="0.3">
+        <div class="island-icon">
+          <svg viewBox="0 0 40 40" fill="none"><rect x="6" y="10" width="28" height="18" rx="2" stroke="#00F5D4" stroke-width="1.5"/><path d="M12 16l4 4-4 4M20 24h8" stroke="#7B2FBE" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Tools</h3>
+        <div class="island-tags">
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">GitHub</span>
+          <span class="skill-tag">VS Code</span>
+          <span class="skill-tag">MS Office</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================== EXPERIENCE ======================== -->
+  <section class="section experience" id="experience">
+    <div class="section-label"><span>04</span> JOURNEY</div>
+    <h2 class="section-title center">Experience & <span class="accent-cyan">Leadership</span></h2>
+    <div class="timeline">
+      <div class="timeline-line"></div>
+
+      <div class="timeline-item left">
+        <div class="timeline-dot"><span class="ping"></span></div>
+        <div class="timeline-card">
+          <div class="timeline-icon">🏢</div>
+          <h3>Neura-AI Solutions Pvt. Ltd</h3>
+          <p class="timeline-role">Data & Operations Intern</p>
+          <p class="timeline-date">August 2024</p>
+          <p class="timeline-desc">Managed data pipelines, supported SLA-driven operations, and collaborated with cross-functional teams on AI-powered solutions.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="timeline-dot"><span class="ping"></span></div>
+        <div class="timeline-card">
+          <div class="timeline-icon">🎓</div>
+          <h3>Head Coordinator</h3>
+          <p class="timeline-role">National Level Technical Symposium</p>
+          <p class="timeline-date">March 2025</p>
+          <p class="timeline-desc">Led end-to-end coordination of a national-level tech symposium with 500+ participants, managing logistics, team delegation, and stakeholder communication.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="timeline-dot"><span class="ping"></span></div>
+        <div class="timeline-card">
+          <div class="timeline-icon">📋</div>
+          <h3>Class Committee Head</h3>
+          <p class="timeline-role">AVS Engineering College</p>
+          <p class="timeline-date">2024 – Present</p>
+          <p class="timeline-desc">Representing class interests, mediating student-faculty communication, and driving academic process improvements.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="timeline-dot"><span class="ping"></span></div>
+        <div class="timeline-card">
+          <div class="timeline-icon">🎤</div>
+          <h3>Program Coordinator</h3>
+          <p class="timeline-role">Career Awareness Initiative</p>
+          <p class="timeline-date">October 2025</p>
+          <p class="timeline-desc">Organized and led a career awareness program, connecting students with industry professionals and emerging tech career paths.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stat Counters -->
+    <div class="stat-counters">
+      <div class="stat-item">
+        <span class="stat-number" data-target="500">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Participants Managed</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="10">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Events Coordinated</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="8" data-decimal="22">0</span>
+        <span class="stat-label">CGPA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== EDUCATION ======================== -->
+  <section class="section education" id="education">
+    <div class="section-label"><span>05</span> ACADEMICS</div>
+    <h2 class="section-title center">Education</h2>
+    <div class="edu-constellation">
+      <canvas id="constellationCanvas"></canvas>
+    </div>
+    <div class="edu-cards">
+      <div class="edu-card main">
+        <div class="edu-degree">B.Tech — AI & Data Science</div>
+        <div class="edu-school">Anna University / AVS Engineering College, Salem</div>
+        <div class="edu-year">2022 – 2026</div>
+        <div class="edu-score">CGPA: <span class="accent-cyan">8.22</span> / 10</div>
+      </div>
+      <div class="edu-row">
+        <div class="edu-card mini">
+          <div class="edu-degree">HSC (12th)</div>
+          <div class="edu-school">Swamy Vivekanandha Matric HSS</div>
+          <div class="edu-score"><span class="accent-cyan">72%</span></div>
+        </div>
+        <div class="edu-card mini">
+          <div class="edu-degree">SSLC (10th)</div>
+          <div class="edu-school">Swamy Vivekanandha Matric HSS</div>
+          <div class="edu-score"><span class="accent-cyan">83%</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== CONTACT ======================== -->
+  <section class="section contact" id="contact">
+    <div class="section-label"><span>06</span> CONNECT</div>
+    <h2 class="contact-headline">LET'S BUILD SOMETHING <span class="accent-cyan glow-text">INTELLIGENT</span></h2>
+    <div class="contact-links">
+      <a href="mailto:sanjayraina023@gmail.com" class="contact-item" id="contactEmail">
+        <span class="contact-icon">📧</span>
+        <span class="contact-text">sanjayraina023@gmail.com</span>
+      </a>
+      <a href="tel:+918637674227" class="contact-item" id="contactPhone">
+        <span class="contact-icon">📞</span>
+        <span class="contact-text">+91 8637674227</span>
+      </a>
+      <a href="https://www.linkedin.com/in/ezhil-savier/" target="_blank" rel="noopener" class="contact-item" id="contactLinkedIn">
+        <span class="contact-icon">💼</span>
+        <span class="contact-text">LinkedIn Profile</span>
+      </a>
+    </div>
+    <div class="contact-badges">
+      <div class="badge location">
+        <span>📍</span> Hosur, TN — Open to Bengaluru
+      </div>
+      <div class="badge availability">
+        <span class="pulse-dot"></span> Available Immediately
+      </div>
+    </div>
+    <div class="footer-terminal">
+      <span class="ft-prompt">&gt;</span> ezhilsavier --status: <span class="accent-cyan">open to work</span>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <p>Designed & Built by <span class="accent-cyan">Ezhil Savier S</span> · 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- AI Chat Assistant Widget -->
+  <div id="ai-chat-root"></div>
+  <script src="ai-chat-widget.js"></script>
+</body>
+</html>
