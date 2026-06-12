@@ -3,7 +3,16 @@
 import { useState, useCallback, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+const getApiUrl = () => {
+  if (typeof window !== "undefined") {
+    if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+      return "http://localhost:5000";
+    }
+  }
+  return process.env.NEXT_PUBLIC_API_URL || "https://portfolio-backend-x9s4.onrender.com";
+};
+
+const API_URL = getApiUrl();
 
 /**
  * useChat — Custom React hook managing all chat state and SSE streaming.
