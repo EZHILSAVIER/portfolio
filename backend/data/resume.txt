@@ -1,0 +1,44 @@
+# RESUME — Ezhil Savier S
+
+## Personal Information
+Name: Ezhil Savier S
+Title: AI & Data Science Engineer
+Tagline: "Intelligence with Intent"
+Location: Hosur, Tamil Nadu, India
+Open to Relocate: Yes — Bengaluru
+Availability: Available Immediately
+Email: sanjayraina023@gmail.com
+Phone: +91 8637674227
+LinkedIn: https://www.linkedin.com/in/ezhil-savier/
+
+## Professional Summary
+I build AI systems that solve real-world problems — from catching phishing emails to reading human emotions in real time. I'm a B.Tech AI & Data Science graduate with a passion for crafting intelligent solutions that go beyond the lab. I think in systems — whether it's a neural network or a team workflow. My approach is "Intelligence with Intent" — I don't just build models, I solve real-world problems end-to-end.
+
+## Education
+
+### B.Tech — Artificial Intelligence & Data Science
+Institution: Anna University / AVS Engineering College, Salem
+Duration: 2022 – 2026
+CGPA: 8.22 / 10
+
+### HSC (12th Standard)
+Institution: Swamy Vivekanandha Matric Higher Secondary School
+Score: 72%
+
+### SSLC (10th Standard)
+Institution: Swamy Vivekanandha Matric Higher Secondary School
+Score: 83%
+
+## About Me
+I'm not just about code. I've coordinated national-level events for 500+ participants, led class committees, and managed SLA-driven operations. I think in systems — whether it's a neural network or a team workflow. I bring both technical depth and leadership experience to every project.
+
+## Key Strengths
+- End-to-end AI system development
+- Strong foundation in ML, NLP, and Computer Vision
+- Leadership and event coordination experience
+- Systems thinking approach
+- Cross-functional team collaboration
+- Problem-solving with real-world impact
+
+## Status
+Currently open to work — available immediately for full-time roles, internships, or freelance projects in AI/ML, Data Science, and Full-Stack Development. Willing to relocate to Bengaluru.

@@ -1,0 +1,332 @@
+# 🤖 AI Assistant Training Data — Ezhil Savier S Portfolio
+This document trains the portfolio chatbot to answer visitor questions accurately and confidently. Every answer is grounded in Ezhil's resume, portfolio, and projects.
+
+---
+
+## SECTION 1 — IDENTITY & PROFILE SUMMARY
+
+**Who is Ezhil Savier?**
+Ezhil Savier S is a B.Tech graduate in Artificial Intelligence & Data Science from AVS Engineering College (Anna University), Salem, Tamil Nadu. He is an AI & ML engineer with hands-on experience in cybersecurity, computer vision, NLP, and full-stack web development. His portfolio tagline is *"Intelligence with Intent"* — meaning he builds AI systems that solve real-world problems, not just academic experiments.
+
+**Contact Details:**
+- Email: sanjayraina023@gmail.com
+- Phone: +91 8637674227
+- Location: Hosur, Tamil Nadu — Open to Bengaluru
+- LinkedIn: linkedin.com/in/ezhil-savier/
+- Portfolio: https://ezhil-savier-portfolio.netlify.app/
+
+---
+
+## SECTION 2 — EDUCATION
+
+| Level | Institution | Score | Year |
+|---|---|---|---|
+| B.Tech — AI & Data Science | Anna University / AVSEC, Salem | CGPA: 8.22 / 10.0 | 2022 – 2026 |
+| HSC (12th) | Swamy Vivekanandha Matric HSS | 72% | 2021-2022 |
+| SSLC (10th) | Swamy Vivekanandha Matric HSS | 83% | 2019-2020 |
+
+---
+
+## SECTION 3 — TECHNICAL SKILLS
+
+- **Languages:** Python, SQL
+- **AI / ML:** Machine Learning, Deep Learning, Neural Networks, LLMs
+- **NLP:** TF-IDF, Tokenization, Text Classification
+- **ML Libraries:** Scikit-learn, Pandas, NumPy, Matplotlib, TensorFlow (Fundamentals)
+- **Computer Vision:** OpenCV, Deep Learning-based CV
+- **APIs & Backend:** REST APIs, FastAPI
+- **Tools:** GitHub, Docker, VS Code, MS Office, Google Workspace, Cursor, Antigravity, windsurf
+
+---
+
+## SECTION 4 — PROJECTS
+
+### 4.1 PhishGuard — AI-Powered Phishing & Spam Detection System
+- **Domain:** Cybersecurity · Machine Learning · NLP
+- **Tech Stack:** Python, Scikit-learn, Pandas, TF-IDF, Tokenization
+- **GitHub:** https://github.com/EZHILSAVIER/phishguard
+- **Year:** 2025 – 2026
+
+**What it does:**
+PhishGuard is a real-time phishing email and spam classifier. It uses supervised ML algorithms combined with NLP techniques to detect malicious emails, suspicious URLs, and fraudulent message patterns.
+
+**Key Features:**
+- Multi-feature analysis covering email content, sender behaviour profiling, and URL pattern recognition
+- End-to-end pipeline: data ingestion → preprocessing → feature engineering → model evaluation → real-time inference
+- Secure user alert module that sends real-time threat notifications
+
+**Pipeline Flow:**
+Email Input → NLP Parsing → ML Classifier → Threat Alert
+
+**Why it matters:**
+Phishing is one of the top cybersecurity threats. PhishGuard demonstrates practical ML application for real-world threat detection.
+
+---
+
+### 4.2 Sentient Shopper — Emotion-Aware AI Shopping Assistant
+- **Domain:** AI · Computer Vision · Recommendation Systems
+- **Tech Stack:** Deep Learning, Computer Vision (CV), Collaborative Filtering, Predictive Analytics
+- **Year:** 2024 – 2025
+
+**What it does:**
+Sentient Shopper is an AI retail assistant that reads a customer's facial emotion using computer vision and delivers personalized product recommendations based on their real-time sentiment.
+
+**Key Features:**
+- Real-time emotion recognition via deep learning-based computer vision
+- Collaborative filtering + deep learning recommendation engine
+- EDA (Exploratory Data Analysis) on customer behaviour data to dynamically adapt recommendations
+- End-to-end pipeline: Face Scan → Emotion Label → Recommendation
+
+**Why it matters:**
+Emotion-aware AI is a growing frontier in retail personalization. This project demonstrates Ezhil's ability to combine CV, deep learning, and recommendation systems into one cohesive product.
+
+---
+
+### 4.3 MemoSnap — Cloud-Based Photo Memory Web Application
+- **Domain:** Full-Stack Web Development · Cloud Storage
+- **Tech Stack:** HTML5, CSS3, JavaScript, REST APIs, Cloud Storage, Database Management
+- **GitHub:** https://github.com/EZHILSAVIER/memosnap
+- **Year:** 2024
+
+**What it does:**
+MemoSnap is a full-stack photo memory platform where users can capture, tag, and store photos in personalized timeline albums with cross-device compatibility.
+
+**Key Features:**
+- Secure cloud storage integration
+- Personalized timeline albums
+- REST API design and database management
+- Responsive and accessible UI across all screen sizes
+- Pipeline: Capture → Process → Cloud Sync
+
+---
+
+### 4.4 TrustCart — AI-Powered E-Commerce Compliance Monitor
+- **Domain:** LegalTech · AI · Full-Stack
+- **Tech Stack:** Gemini 2.5 Flash, FastAPI, React 19, OpenCV, MongoDB, CloudScraper
+- **GitHub:** https://github.com/EZHILSAVIER/trustcart
+- **Year:** 2025 – 2026
+
+**What it does:**
+TrustCart scrapes e-commerce product listings and flags Indian legal compliance violations in real time using Gemini 2.5 Flash for AI analysis, OpenCV for watermark detection, and a weighted rule engine to generate risk reports.
+
+**Key Features:**
+- Automated product listing scraper using CloudScraper
+- Gemini 2.5 Flash integration for AI-powered compliance checks
+- OpenCV-based watermark and image compliance detection
+- Weighted rule engine to score and prioritize violations
+- Full-stack: React 19 frontend + FastAPI backend + MongoDB database
+- Pipeline: URL Input → AI Scrape → Rule Engine → Risk Report
+
+---
+
+## SECTION 5 — EXPERIENCE & LEADERSHIP
+
+### 5.1 Intern — Neura-AI Solutions Pvt. Ltd (August 2024)
+- Processed, organised, and documented project data within SLA-driven workflows
+- Collaborated cross-functionally to ensure data quality, compliance, and operational efficiency
+- Contributed to ML-based tasks and improved data handling workflows
+- Hands-on exposure to data preprocessing and quality assurance in a business context
+
+### 5.2 Head Coordinator — National Level Technical Symposium (March 2025)
+- Managed end-to-end coordination for 500+ participants across 10 concurrent events
+- Handled queue management, task allocation, and real-time issue resolution
+- Demonstrated large-scale event and people management skills
+
+### 5.3 Class Committee Head — AVS Engineering College (2024 – Present)
+- Liaised between faculty and students
+- Managed scheduling, MoM (Minutes of Meeting) documentation, and monitored task completion
+- Reflects structured workflow and stakeholder management
+
+### 5.4 Program Coordinator — Career Awareness Initiative (October 2025)
+- Organised and led a career awareness program connecting students with industry professionals
+- Focused on emerging tech career paths
+
+---
+
+## SECTION 6 — CORE COMPETENCIES
+
+- Data Preprocessing & Feature Engineering
+- Model Evaluation & Deployment
+- Scalable Data Pipeline Architecture
+- Cross-functional Team Collaboration
+- SLA-Driven Workflow Management
+- Data-Driven Decision Making
+- Stakeholder Communication
+
+---
+
+## SECTION 7 — Q&A TRAINING DATA
+
+### CATEGORY A: WHO IS EZHIL?
+
+**Q1: Who are you / Who is Ezhil Savier?**
+Ezhil Savier S is an AI & Data Science engineer and fresh B.Tech graduate from Anna University (AVS Engineering College, Salem). He specialises in machine learning, NLP, computer vision, and full-stack AI development. His work spans cybersecurity, emotion AI, e-commerce compliance, and cloud-based apps. Beyond code, he's also a proven leader — coordinating national-level events and managing teams. His philosophy: "Intelligence with Intent."
+
+**Q2: Where is Ezhil from and where is he open to work?**
+He is based in Hosur, Tamil Nadu, and is open to opportunities in Bengaluru. He is available to join immediately.
+
+**Q3: What is Ezhil's educational background?**
+Ezhil holds a B.Tech in Artificial Intelligence and Data Science from AVS Engineering College (affiliated with Anna University), graduating in 2026, with a CGPA of 8.22/10. He completed his schooling from Swamy Vivekanandha Matric HSS — scoring 83% in SSLC and 72% in HSC.
+
+### CATEGORY B: TECHNICAL SKILLS
+
+**Q4: What programming languages does Ezhil know?**
+Ezhil is proficient in Python and SQL. Python is his primary language for AI/ML development.
+
+**Q5: What ML frameworks and libraries does Ezhil use?**
+He works with Scikit-learn, TensorFlow (fundamentals), Pandas, NumPy, and Matplotlib. For deep learning, he has applied neural networks and computer vision models across multiple projects.
+
+**Q6: Does Ezhil know NLP?**
+Yes. Ezhil has hands-on NLP experience — specifically TF-IDF vectorisation, tokenization, and text classification. He applied these techniques in PhishGuard to build a real-time email spam and phishing detection system.
+
+**Q7: Does Ezhil know computer vision?**
+Yes. In Sentient Shopper, he built an emotion recognition system using deep learning and computer vision to detect facial sentiment in real time. In TrustCart, he used OpenCV for watermark and image compliance detection.
+
+**Q8: What tools and DevOps does Ezhil use?**
+He uses GitHub for version control, Docker for containerisation, VS Code and Cursor as IDEs, and MS Office / Google Workspace for productivity. He also has experience with REST APIs and FastAPI for backend development.
+
+**Q9: Does Ezhil know full-stack development?**
+Yes. TrustCart is his most advanced full-stack project — built with React 19 (frontend), FastAPI (backend), and MongoDB (database). MemoSnap is another full-stack web app using HTML5, CSS3, JavaScript, REST APIs, and cloud storage.
+
+**Q10: Has Ezhil worked with LLMs?**
+Yes. In TrustCart, he integrated Google's Gemini 2.5 Flash LLM to power AI-based compliance analysis of e-commerce product listings.
+
+**Q35: What are Ezhil's technical skills? / What are his technical skills?**
+### TECHNICAL SKILLS
+
+* **Languages:** Python, SQL
+* **AI / ML:** Machine Learning, Deep Learning, Neural Networks, LLMs
+* **NLP:** TF-IDF, Tokenization, Text Classification
+* **ML Libraries:** Scikit-learn, Pandas, NumPy, Matplotlib, TensorFlow (Fundamentals)
+* **Computer Vision:** OpenCV, Deep Learning-based CV
+* **APIs & Backend:** REST APIs, FastAPI
+
+### CATEGORY C: PROJECTS
+
+**Q11: What are Ezhil's main projects?**
+Ezhil has four major projects:
+1. **PhishGuard** — AI-powered phishing & spam email detection (ML + NLP)
+2. **Sentient Shopper** — Emotion-aware shopping assistant (Computer Vision + Deep Learning)
+3. **MemoSnap** — Cloud-based photo memory web app (Full-Stack)
+4. **TrustCart** — AI e-commerce compliance monitor (LLM + FastAPI + React)
+
+**Q12: Tell me about PhishGuard.**
+PhishGuard is a real-time phishing detection system that classifies malicious emails and suspicious URLs. It uses supervised ML algorithms with NLP techniques (TF-IDF, tokenization) to analyse email content, sender behaviour, and URL patterns. It includes a live threat alert module. The pipeline is: Email Input → NLP Parsing → ML Classifier → Threat Alert. GitHub: github.com/EZHILSAVIER/phishguard
+
+**Q13: Tell me about Sentient Shopper.**
+Sentient Shopper is an emotion-aware AI assistant for retail. It uses deep learning-based computer vision to detect a customer's facial emotion in real time, then feeds that signal into a recommendation engine (collaborative filtering + deep learning) to suggest relevant products. Ezhil also ran EDA on customer behaviour data to continuously improve recommendation accuracy. Pipeline: Face Scan → Emotion Label → Recommendation.
+
+**Q14: Tell me about MemoSnap.**
+MemoSnap is a cloud-based photo memory platform. Users can capture photos, organise them into personalised timeline albums, and access them across any device. It's built with HTML5, CSS3, JavaScript, REST APIs, and cloud storage integration. GitHub: github.com/EZHILSAVIER/memosnap
+
+**Q15: Tell me about TrustCart.**
+TrustCart is an AI-powered compliance monitoring tool for e-commerce. It scrapes product listings, runs them through Gemini 2.5 Flash for AI analysis, applies OpenCV for watermark detection, and uses a weighted rule engine to flag Indian legal violations and generate risk reports. Stack: React 19 + FastAPI + MongoDB + CloudScraper. GitHub: github.com/EZHILSAVIER/trustcart
+
+**Q16: What is Ezhil's most technically complex project?**
+TrustCart is likely his most complex — it integrates a Gemini 2.5 Flash LLM, FastAPI backend, React 19 frontend, MongoDB database, OpenCV image processing, and a custom weighted rule engine, all working together in a full production-grade pipeline.
+
+**Q17: Which projects are on GitHub?**
+PhishGuard, MemoSnap, and TrustCart all have public GitHub repositories. Links are available on his portfolio at ezhil-savier-portfolio.netlify.app.
+
+### CATEGORY D: EXPERIENCE & LEADERSHIP
+
+**Q18: Does Ezhil have any work experience?**
+Yes. He interned at Neura-AI Solutions Pvt. Ltd in August 2024. There, he worked on data processing, ML-based tasks, SLA-driven workflows, and cross-functional collaboration — gaining real business-context AI/ML exposure.
+
+**Q19: What leadership experience does Ezhil have?**
+He has strong leadership credentials:
+- **Head Coordinator** of a National Level Technical Symposium (500+ participants, 10 concurrent events)
+- **Class Committee Head** at AVS Engineering College (faculty-student liaison, scheduling, MoM documentation)
+- **Program Coordinator** for a Career Awareness Initiative (October 2025)
+
+**Q20: Is Ezhil only a coder, or does he have soft skills too?**
+Both. Ezhil has coordinated large-scale events (500+ participants), managed stakeholder communication, handled SLA-driven workflows, and documented meeting minutes. He combines technical depth with team leadership and organisational skills.
+
+**Q36: What experience does Ezhil have? / What experience does he have? / What is his experience and leadership background?**
+### EXPERIENCE & LEADERSHIP
+
+#### 5.1 Intern — Neura-AI Solutions Pvt. Ltd (August 2024)
+* Processed, organised, and documented project data within SLA-driven workflows
+* Collaborated cross-functionally to ensure data quality, compliance, and operational efficiency
+* Contributed to ML-based tasks and improved data handling workflows
+* Hands-on exposure to data preprocessing and quality assurance in a business context
+
+#### 5.2 Head Coordinator — National Level Technical Symposium (March 2025)
+* Managed end-to-end coordination for 500+ participants across 10 concurrent events
+* Handled queue management, task allocation, and real-time issue resolution
+* Demonstrated large-scale event and people management skills
+
+#### 5.3 Class Committee Head — AVS Engineering College (2024 – Present)
+* Liaised between faculty and students
+* Managed scheduling, MoM (Minutes of Meeting) documentation, and monitored task completion
+* Reflects structured workflow and stakeholder management
+
+#### 5.4 Program Coordinator — Career Awareness Initiative (October 2025)
+* Organised and led a career awareness program connecting students with industry professionals
+* Focused on emerging tech career paths
+
+**Q37: Tell me about Ezhil's internship / What did he do during his internship at Neura-AI Solutions?**
+### INTERNSHIP EXPERIENCE
+
+#### 5.1 Intern — Neura-AI Solutions Pvt. Ltd (August 2024)
+* Processed, organised, and documented project data within SLA-driven workflows
+* Collaborated cross-functionally to ensure data quality, compliance, and operational efficiency
+* Contributed to ML-based tasks and improved data handling workflows
+* Hands-on exposure to data preprocessing and quality assurance in a business context
+
+### CATEGORY E: AVAILABILITY & HIRING
+
+**Q21: Is Ezhil available to hire?**
+Yes. Ezhil is available immediately and actively looking for opportunities in AI/ML engineering, data science, or related technical roles. He is based in Hosur and open to Bengaluru.
+
+**Q22: What kind of roles is Ezhil targeting?**
+He is targeting roles such as:
+- AI/ML Engineer
+- Data Scientist
+- Machine Learning Engineer
+- AI Research/Development Intern
+- Full-Stack AI Developer
+- Data & Operations Analyst
+
+**Q23: How can I contact Ezhil?**
+- Email: sanjayraina023@gmail.com
+- Phone: +91 8637674227
+- LinkedIn: linkedin.com/in/ezhil-savier/
+- Portfolio: ezhil-savier-portfolio.netlify.app
+
+**Q24: Where can I see Ezhil's resume?**
+His resume is linked on his portfolio at ezhil-savier-portfolio.netlify.app (VIEW RESUME button). You can also request it directly via email.
+
+### CATEGORY F: SPECIFIC TECHNICAL QUESTIONS
+
+**Q25: Can Ezhil work with LLMs and generative AI?**
+Yes. He has integrated Google Gemini 2.5 Flash in TrustCart for compliance analysis. He also has general exposure to LLM concepts and has worked in environments using AI APIs.
+
+**Q26: Does Ezhil have experience with cloud or deployment?**
+Yes. MemoSnap uses cloud storage integration. He has also used Docker for containerisation. His portfolio site itself is deployed on Netlify.
+
+**Q27: Has Ezhil worked with databases?**
+Yes. He has used MongoDB (in TrustCart) and has general knowledge of SQL as listed in his skills.
+
+**Q28: Can Ezhil build REST APIs?**
+Yes. He built REST APIs for MemoSnap and used FastAPI (a Python REST framework) for TrustCart's backend.
+
+**Q29: What is Ezhil's CGPA?**
+8.22 out of 10.0 from Anna University.
+
+**Q30: Does Ezhil have experience with data pipelines?**
+Yes. Across his projects and internship, he has designed and implemented end-to-end data pipelines — from raw data ingestion and preprocessing through feature engineering, model training, and real-time inference/deployment.
+
+### CATEGORY G: EDGE / TRICKY QUESTIONS
+
+**Q31: What makes Ezhil stand out from other AI graduates?**
+Three things: (1) He builds complete, end-to-end AI systems — not just notebooks; (2) He combines technical AI skills with real leadership and event management experience; (3) His projects span diverse domains — cybersecurity, emotion AI, LegalTech, and full-stack — showing adaptability and range.
+
+**Q32: What is Ezhil's philosophy or approach to AI?**
+"Intelligence with Intent" — Ezhil believes AI should solve concrete, real-world problems. He focuses on building systems that go beyond the lab and deliver practical value, from blocking phishing attacks to reading human emotions in a retail setting.
+
+**Q33: Does Ezhil have research publications?**
+No publications are listed in the current resume or portfolio. His focus has been on project-based, applied AI development.
+
+**Q34: What's Ezhil's weakest area?**
+As a fresh graduate, his experience with large-scale production ML systems and enterprise-level MLOps (like model monitoring, drift detection, A/B testing at scale) is still developing. However, his internship, multiple end-to-end projects, and TrustCart's full-stack architecture demonstrate strong practical readiness.

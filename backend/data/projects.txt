@@ -1,0 +1,54 @@
+# PROJECTS — Ezhil Savier S
+
+## PhishGuard
+Category: Cybersecurity · Machine Learning · NLP
+Description: AI-powered email phishing detection system that uses NLP pipelines and ML classifiers to identify threat patterns in real-time. PhishGuard analyzes incoming emails, extracts text features using TF-IDF vectorization, applies tokenization and text preprocessing, and runs trained ML classifiers to determine if an email is a phishing attempt or legitimate.
+Tech Stack: Scikit-learn, TF-IDF, Python, Tokenization
+Pipeline: Email Input → NLP Parsing → ML Classifier → Threat Alert
+Key Features:
+- Real-time phishing detection
+- NLP-based email text analysis
+- TF-IDF feature extraction
+- ML classification with high accuracy
+- Threat alerting system
+GitHub: https://github.com/EZHILSAVIER/phishguard
+
+## Sentient Shopper
+Category: Emotion AI · Computer Vision · Recommendation Systems
+Description: Emotion-aware recommendation engine that uses deep learning computer vision to detect user sentiment in real-time and personalize product suggestions. The system captures facial expressions through a camera, processes them through a deep learning model to classify emotions (happy, sad, neutral, surprised, etc.), and then uses collaborative filtering algorithms to recommend products that match the user's current emotional state.
+Tech Stack: Deep Learning, Computer Vision (CV), Collaborative Filtering, Predictive Analytics
+Pipeline: Face Scan → Emotion Label → Recommendation
+Key Features:
+- Real-time facial emotion detection
+- Deep learning-based sentiment classification
+- Emotion-aware product recommendations
+- Collaborative filtering algorithm
+- Predictive analytics for user preferences
+
+## MemoSnap
+Category: Full-Stack · Cloud · Web Application
+Description: Cloud-powered photo journal platform with intuitive capture, tagging, and sharing capabilities. MemoSnap blends nostalgia with modern technology, allowing users to capture photos, tag them with memories, organize them into journals, and share them seamlessly. The platform uses cloud storage for reliable data persistence and REST APIs for smooth client-server communication.
+Tech Stack: HTML5, CSS3, JavaScript, Cloud Storage, REST API
+Pipeline: Capture → Process → Cloud Sync
+Key Features:
+- Intuitive photo capture interface
+- Memory tagging and organization
+- Cloud-powered storage and sync
+- Responsive web design
+- RESTful API architecture
+GitHub: https://github.com/EZHILSAVIER/memosnap
+
+## TrustCart
+Category: LegalTech · AI · Full-Stack · Compliance
+Description: AI-powered e-commerce compliance monitor that scrapes product listings from e-commerce platforms and flags Indian legal violations in real time. TrustCart uses Gemini 2.5 Flash for intelligent analysis, OpenCV for watermark detection on product images, and a weighted rule engine to score compliance risks. It generates comprehensive risk reports for each product listing analyzed.
+Tech Stack: Gemini 2.5 Flash, FastAPI, React 19, OpenCV, MongoDB, CloudScraper
+Pipeline: URL Input → AI Scrape → Rule Engine → Risk Report
+Key Features:
+- Real-time e-commerce compliance monitoring
+- AI-powered legal violation detection
+- Gemini 2.5 Flash for intelligent text analysis
+- OpenCV watermark detection
+- Weighted compliance rule engine
+- Comprehensive risk reporting
+- Indian legal framework compliance (IPC, Consumer Protection Act)
+GitHub: https://github.com/EZHILSAVIER/trustcart

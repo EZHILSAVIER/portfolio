@@ -1,0 +1,40 @@
+# SKILLS & TECH STACK — Ezhil Savier S
+
+## Programming Languages
+- Python: Primary language for AI/ML development, data analysis, and backend development. Proficient in writing clean, production-level Python code.
+- SQL: Database querying, data manipulation, and management. Experience with relational databases.
+
+## AI / Machine Learning
+- Scikit-learn: ML model development, classification, regression, clustering, feature engineering, model evaluation, and hyperparameter tuning.
+- TensorFlow: Deep learning model development, neural network architectures, training, and deployment.
+- NumPy: Numerical computing, array operations, linear algebra, and mathematical computations for ML pipelines.
+- Pandas: Data manipulation, cleaning, analysis, and preprocessing. DataFrame operations for large datasets.
+
+## Natural Language Processing (NLP)
+- TF-IDF: Term Frequency-Inverse Document Frequency for text feature extraction and document similarity.
+- Tokenization: Text preprocessing, word/sentence tokenization for NLP pipelines.
+- Text Classification: Building classifiers for text categorization, sentiment analysis, and content filtering.
+
+## Computer Vision
+- OpenCV: Image processing, watermark detection, object detection, and computer vision pipelines.
+- Deep Learning CV: Facial emotion recognition, image classification using neural networks.
+
+## Tools & DevOps
+- Docker: Containerization, deployment, and environment management.
+- GitHub: Version control, collaboration, repository management, and open-source contributions.
+- VS Code: Primary IDE for development.
+- MS Office: Documentation, presentations, and data analysis.
+
+## Web Development
+- FastAPI: Python web framework for building high-performance REST APIs.
+- React: Frontend development with React 19 for building interactive user interfaces.
+- HTML5/CSS3/JavaScript: Frontend web development, responsive design, and interactive UIs.
+- REST APIs: Designing and consuming RESTful web services.
+
+## Databases
+- MongoDB: NoSQL database for storing unstructured and semi-structured data.
+- Cloud Storage: Cloud-based data storage and synchronization.
+
+## AI APIs & Models
+- Google Gemini: Gemini 2.5 Flash for AI-powered text analysis and generation.
+- Generative AI: Experience with large language models and AI-powered applications.
