@@ -1,0 +1,13 @@
+import fs from 'fs';
+import path from 'path';
+
+export async function GET() {
+  const filePath = path.join(process.cwd(), 'public', 'index.html');
+  const html = fs.readFileSync(filePath, 'utf8');
+  
+  return new Response(html, {
+    headers: {
+      'Content-Type': 'text/html',
+    },
+  });
+}
