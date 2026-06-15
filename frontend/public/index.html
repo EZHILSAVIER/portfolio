@@ -30,6 +30,33 @@
   <div class="cursor-dot" id="cursorDot"></div>
   <div class="cursor-ring" id="cursorRing"></div>
 
+  <!-- Sticky Glassmorphic Navbar -->
+  <header class="navbar-header" id="navbarHeader">
+    <div class="navbar-container">
+      <a href="#hero" class="navbar-logo">
+        <span class="logo-prefix">&gt; </span>EZHIL.<span>AI</span>
+      </a>
+      <nav class="navbar-menu" id="navbarMenu">
+        <a href="#hero" class="nav-link active" data-sec="hero">Home</a>
+        <a href="#about" class="nav-link" data-sec="about">Identity</a>
+        <a href="#projects" class="nav-link" data-sec="projects">Projects</a>
+        <a href="#skills" class="nav-link" data-sec="skills">Tech Stack</a>
+        <a href="#experience" class="nav-link" data-sec="experience">Journey</a>
+        <a href="#education" class="nav-link" data-sec="education">Academics</a>
+        <a href="#contact" class="nav-link" data-sec="contact">Connect</a>
+        <a href="https://drive.google.com/file/d/1XFAHt3sR-B6y0H3qiQFi-8ZF-xMo-Dw7/view?usp=drive_link" class="nav-link resume-nav-btn" target="_blank" rel="noopener">
+          <span class="btn-text">VIEW RESUME</span>
+          <span class="btn-cursor">_</span>
+        </a>
+      </nav>
+      <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle Menu">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+      </button>
+    </div>
+  </header>
+
   <!-- Scroll Progress -->
   <div class="scroll-progress" id="scrollProgress"></div>
 
@@ -74,18 +101,12 @@
         <span class="typewriter-cursor">█</span>
       </div>
       <div class="hero-cta">
-        <a href="#projects" class="cta-btn cta-primary" id="ctaProjects">
-          <span class="btn-text">VIEW PROJECTS</span>
+        <a href="#about" class="cta-btn cta-primary" id="ctaExplore">
+          <span class="btn-text">EXPLORE ALL</span>
           <span class="btn-cursor">_</span>
         </a>
         <a href="https://drive.google.com/file/d/1XFAHt3sR-B6y0H3qiQFi-8ZF-xMo-Dw7/view?usp=drive_link" class="cta-btn cta-secondary" id="ctaResume" target="_blank" rel="noopener">
           <span class="btn-text">VIEW RESUME</span>
-          <span class="btn-cursor">_</span>
-        </a>
-      </div>
-      <div class="hero-cta-human">
-        <a href="#about" class="cta-btn cta-human" id="ctaHuman">
-          <span class="btn-text">THE HUMAN BEHIND THE WORK</span>
           <span class="btn-cursor">_</span>
         </a>
       </div>
@@ -175,6 +196,34 @@
         <span>GitHub</span><span>·</span>
       </div>
     </div>
+    <div class="skills-ticker reverse">
+      <div class="ticker-track reverse">
+        <span>Python</span><span>·</span>
+        <span>Scikit-learn</span><span>·</span>
+        <span>Deep Learning</span><span>·</span>
+        <span>NLP</span><span>·</span>
+        <span>TensorFlow</span><span>·</span>
+        <span>Docker</span><span>·</span>
+        <span>SQL</span><span>·</span>
+        <span>REST APIs</span><span>·</span>
+        <span>Computer Vision</span><span>·</span>
+        <span>NumPy</span><span>·</span>
+        <span>Pandas</span><span>·</span>
+        <span>GitHub</span><span>·</span>
+        <span>Python</span><span>·</span>
+        <span>Scikit-learn</span><span>·</span>
+        <span>Deep Learning</span><span>·</span>
+        <span>NLP</span><span>·</span>
+        <span>TensorFlow</span><span>·</span>
+        <span>Docker</span><span>·</span>
+        <span>SQL</span><span>·</span>
+        <span>REST APIs</span><span>·</span>
+        <span>Computer Vision</span><span>·</span>
+        <span>NumPy</span><span>·</span>
+        <span>Pandas</span><span>·</span>
+        <span>GitHub</span><span>·</span>
+      </div>
+    </div>
   </section>
 
   <!-- ======================== PROJECTS ======================== -->
@@ -187,6 +236,10 @@
       <div class="project-card" id="cardPhishGuard">
         <div class="card-bg matrix-bg">
           <canvas id="matrixCanvas"></canvas>
+        </div>
+        <div class="card-image-wrapper">
+          <img src="phishguard_ui.png" alt="PhishGuard App Interface Mockup" class="card-img-preview" />
+          <div class="card-image-overlay"></div>
         </div>
         <div class="card-content">
           <div class="card-icon">
@@ -221,6 +274,10 @@
       <!-- Sentient Shopper -->
       <div class="project-card" id="cardSentient">
         <div class="card-bg gradient-mesh-bg"></div>
+        <div class="card-image-wrapper">
+          <img src="sentient_shopper_ui.png" alt="Sentient Shopper App Interface Mockup" class="card-img-preview" />
+          <div class="card-image-overlay"></div>
+        </div>
         <div class="card-content">
           <div class="card-icon">
             <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -254,6 +311,10 @@
       <!-- MemoSnap -->
       <div class="project-card" id="cardMemoSnap">
         <div class="card-bg polaroid-bg"></div>
+        <div class="card-image-wrapper">
+          <img src="memosnap_ui.png" alt="MemoSnap App Interface Mockup" class="card-img-preview" />
+          <div class="card-image-overlay"></div>
+        </div>
         <div class="card-content">
           <div class="card-icon">
             <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -290,6 +351,10 @@
       <div class="project-card" id="cardTrustCart">
         <div class="card-bg compliance-scan-bg">
           <canvas id="complianceCanvas"></canvas>
+        </div>
+        <div class="card-image-wrapper">
+          <img src="trustcart_ui.png" alt="TrustCart App Interface Mockup" class="card-img-preview" />
+          <div class="card-image-overlay"></div>
         </div>
         <div class="card-content">
           <div class="card-icon">
@@ -391,52 +456,94 @@
   <section class="section experience" id="experience">
     <div class="section-label"><span>04</span> JOURNEY</div>
     <h2 class="section-title center">Experience & <span class="accent-cyan">Leadership</span></h2>
-    <div class="timeline">
-      <div class="timeline-line"></div>
 
-      <div class="timeline-item left">
-        <div class="timeline-dot"><span class="ping"></span></div>
-        <div class="timeline-card">
-          <div class="timeline-icon">🏢</div>
-          <h3>Neura-AI Solutions Pvt. Ltd</h3>
-          <p class="timeline-role">Data & Operations Intern</p>
-          <p class="timeline-date">August 2024</p>
-          <p class="timeline-desc">Managed data pipelines, supported SLA-driven operations, and collaborated with cross-functional teams on AI-powered solutions.</p>
+    <!-- Stacked sticky cards -->
+    <div class="stacked-cards" id="stackedCards">
+
+      <div class="stacked-card" data-card-index="0" style="--card-index: 0;">
+        <div class="stacked-card-inner">
+          <div class="stacked-card-number">01</div>
+          <div class="stacked-card-icon">🏢</div>
+          <div class="stacked-card-body">
+            <div class="stacked-card-meta">
+              <span class="stacked-card-date">August 2024</span>
+              <span class="stacked-card-tag">Internship</span>
+            </div>
+            <h3 class="stacked-card-title">Neura-AI Solutions Pvt. Ltd</h3>
+            <p class="stacked-card-role">Data & Operations Intern</p>
+            <p class="stacked-card-desc">Managed data pipelines, supported SLA-driven operations, and collaborated with cross-functional teams on AI-powered solutions delivering measurable business outcomes.</p>
+            <div class="stacked-card-tags">
+              <span>Data Pipelines</span><span>Operations</span><span>AI Systems</span>
+            </div>
+          </div>
+          <div class="stacked-card-glow" style="--glow-color: #00F5D4;"></div>
         </div>
+        <div class="stacked-card-peel"></div>
       </div>
 
-      <div class="timeline-item right">
-        <div class="timeline-dot"><span class="ping"></span></div>
-        <div class="timeline-card">
-          <div class="timeline-icon">🎓</div>
-          <h3>Head Coordinator</h3>
-          <p class="timeline-role">National Level Technical Symposium</p>
-          <p class="timeline-date">March 2025</p>
-          <p class="timeline-desc">Led end-to-end coordination of a national-level tech symposium with 500+ participants, managing logistics, team delegation, and stakeholder communication.</p>
+      <div class="stacked-card" data-card-index="1" style="--card-index: 1;">
+        <div class="stacked-card-inner">
+          <div class="stacked-card-number">02</div>
+          <div class="stacked-card-icon">🎓</div>
+          <div class="stacked-card-body">
+            <div class="stacked-card-meta">
+              <span class="stacked-card-date">March 2025</span>
+              <span class="stacked-card-tag stacked-card-tag--violet">Leadership</span>
+            </div>
+            <h3 class="stacked-card-title">Head Coordinator</h3>
+            <p class="stacked-card-role">National Level Technical Symposium</p>
+            <p class="stacked-card-desc">Led end-to-end coordination of a national-level tech symposium with 500+ participants, managing logistics, team delegation, and stakeholder communication.</p>
+            <div class="stacked-card-tags">
+              <span>Event Management</span><span>500+ Participants</span><span>Coordination</span>
+            </div>
+          </div>
+          <div class="stacked-card-glow" style="--glow-color: #7B2FBE;"></div>
         </div>
+        <div class="stacked-card-peel"></div>
       </div>
 
-      <div class="timeline-item left">
-        <div class="timeline-dot"><span class="ping"></span></div>
-        <div class="timeline-card">
-          <div class="timeline-icon">📋</div>
-          <h3>Class Committee Head</h3>
-          <p class="timeline-role">AVS Engineering College</p>
-          <p class="timeline-date">2024 – Present</p>
-          <p class="timeline-desc">Representing class interests, mediating student-faculty communication, and driving academic process improvements.</p>
+      <div class="stacked-card" data-card-index="2" style="--card-index: 2;">
+        <div class="stacked-card-inner">
+          <div class="stacked-card-number">03</div>
+          <div class="stacked-card-icon">📋</div>
+          <div class="stacked-card-body">
+            <div class="stacked-card-meta">
+              <span class="stacked-card-date">2024 – Present</span>
+              <span class="stacked-card-tag stacked-card-tag--amber">Ongoing</span>
+            </div>
+            <h3 class="stacked-card-title">Class Committee Head</h3>
+            <p class="stacked-card-role">AVS Engineering College</p>
+            <p class="stacked-card-desc">Representing class interests, mediating student-faculty communication, and driving academic process improvements across the department.</p>
+            <div class="stacked-card-tags">
+              <span>Student Leadership</span><span>Communication</span><span>Academia</span>
+            </div>
+          </div>
+          <div class="stacked-card-glow" style="--glow-color: #F5A623;"></div>
         </div>
+        <div class="stacked-card-peel"></div>
       </div>
 
-      <div class="timeline-item right">
-        <div class="timeline-dot"><span class="ping"></span></div>
-        <div class="timeline-card">
-          <div class="timeline-icon">🎤</div>
-          <h3>Program Coordinator</h3>
-          <p class="timeline-role">Career Awareness Initiative</p>
-          <p class="timeline-date">October 2025</p>
-          <p class="timeline-desc">Organized and led a career awareness program, connecting students with industry professionals and emerging tech career paths.</p>
+      <div class="stacked-card" data-card-index="3" style="--card-index: 3;">
+        <div class="stacked-card-inner">
+          <div class="stacked-card-number">04</div>
+          <div class="stacked-card-icon">🎤</div>
+          <div class="stacked-card-body">
+            <div class="stacked-card-meta">
+              <span class="stacked-card-date">October 2025</span>
+              <span class="stacked-card-tag stacked-card-tag--cyan">Program</span>
+            </div>
+            <h3 class="stacked-card-title">Program Coordinator</h3>
+            <p class="stacked-card-role">Career Awareness Initiative</p>
+            <p class="stacked-card-desc">Organized and led a career awareness program, connecting students with industry professionals and emerging tech career paths, broadening horizons for 200+ attendees.</p>
+            <div class="stacked-card-tags">
+              <span>Career Guidance</span><span>Industry Connect</span><span>Program Design</span>
+            </div>
+          </div>
+          <div class="stacked-card-glow" style="--glow-color: #00F5D4;"></div>
         </div>
+        <div class="stacked-card-peel"></div>
       </div>
+
     </div>
 
     <!-- Stat Counters -->
@@ -519,6 +626,54 @@
   <footer class="main-footer">
     <p>Designed & Built by <span class="accent-cyan">Ezhil Savier S</span> · 2026</p>
   </footer>
+
+  <!-- Project Detail Modal -->
+  <div class="project-modal" id="projectModal" aria-hidden="true">
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal-wrapper">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close Modal">&times;</button>
+      <div class="modal-content-container">
+        <div class="modal-hero">
+          <img src="" alt="" id="modalImg" class="modal-hero-img" />
+          <div class="modal-hero-overlay"></div>
+          <div class="modal-header-info">
+            <span class="modal-category" id="modalCategory">Category</span>
+            <h2 class="modal-title" id="modalTitle">Project Title</h2>
+          </div>
+        </div>
+        <div class="modal-body-content">
+          <div class="modal-section">
+            <h3>Description</h3>
+            <p id="modalDesc">Project description...</p>
+          </div>
+          <div class="modal-section">
+            <h3>Tech Stack</h3>
+            <div class="modal-tags" id="modalTags">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+          <div class="modal-section">
+            <h3>Workflow & Pipeline</h3>
+            <div class="modal-pipeline" id="modalPipeline">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+          <div class="modal-section">
+            <h3>Key Features</h3>
+            <ul class="modal-features-list" id="modalFeatures">
+              <!-- Dynamically populated -->
+            </ul>
+          </div>
+          <div class="modal-actions" id="modalActions">
+            <a href="" target="_blank" rel="noopener" class="modal-btn" id="modalGitHubLink">
+              <span class="btn-text">VIEW ON GITHUB</span>
+              <span class="btn-cursor">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 

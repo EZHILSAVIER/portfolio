@@ -56,6 +56,16 @@
       </defs>
     </svg>
     <span class="ai-btn-label">
+      <div class="ai-chat-animation-container">
+        <canvas class="ai-chat-canvas" width="240" height="120"></canvas>
+        <div class="ai-chat-animation-text">
+          <span class="ai-eq-text">Human Knowledge</span>
+          <span class="ai-eq-op">+</span>
+          <span class="ai-eq-text">Artificial Intelligence</span>
+          <span class="ai-eq-op">=</span>
+          <span class="ai-eq-innov">Innovation</span>
+        </div>
+      </div>
       <span class="ai-label-greeting">Hey! I'm <strong>Ezhil's AI Assistant</strong></span>
       <span class="ai-label-cta">Click to chat →</span>
       <span class="ai-label-tail"></span>
@@ -211,6 +221,97 @@
       0%   { stroke-dashoffset: 200; opacity: 0; }
       30%  { opacity: 0.5; }
       100% { stroke-dashoffset: 0; opacity: 0.3; }
+    }
+
+    /* ===== Particle Canvas Animation Container ===== */
+    .ai-chat-animation-container {
+      position: absolute;
+      bottom: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 240px;
+      height: 145px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      pointer-events: none;
+      z-index: 8010;
+    }
+
+    .ai-chat-canvas {
+      width: 240px;
+      height: 120px;
+      display: block;
+    }
+
+    .ai-chat-animation-text {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 4.5px;
+      opacity: 1;
+      transform: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      font-family: 'DM Mono', monospace;
+      font-size: 8.5px;
+      letter-spacing: -0.015em;
+      color: #a0aec0;
+      white-space: nowrap;
+      margin-top: 8px;
+      background: rgba(10, 15, 26, 0.75);
+      border: 1px solid rgba(0, 245, 212, 0.2);
+      border-radius: 12px;
+      padding: 4px 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+      cursor: pointer;
+      pointer-events: auto;
+    }
+
+    .ai-chat-animation-text:hover {
+      transform: translateY(-2px) scale(1.04);
+      border-color: rgba(0, 245, 212, 0.55);
+      box-shadow: 0 6px 16px rgba(0, 245, 212, 0.2), 0 0 10px rgba(155, 93, 229, 0.1);
+      color: #ffffff;
+    }
+
+    .ai-eq-text {
+      color: #a0aec0;
+      transition: color 0.3s ease;
+    }
+
+    .ai-chat-animation-text:hover .ai-eq-text {
+      color: #e2e8f0;
+    }
+
+    .ai-eq-op {
+      color: #00F5D4;
+      font-weight: 700;
+      font-size: 9.5px;
+      text-shadow: 0 0 4px rgba(0, 245, 212, 0.4);
+    }
+
+    .ai-eq-op:last-of-type {
+      color: #9B5DE5;
+      text-shadow: 0 0 4px rgba(155, 93, 229, 0.4);
+    }
+
+    .ai-eq-innov {
+      font-weight: 700;
+      font-size: 9px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #00F5D4 0%, #9B5DE5 50%, #00F5D4 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fillColor: transparent;
+      animation: shine 3s linear infinite;
+      filter: drop-shadow(0 0 4px rgba(0, 245, 212, 0.35));
+    }
+
+    @keyframes shine {
+      to { background-position: 200% center; }
     }
 
     /* ===== Intro Label — always visible speech bubble on the right ===== */
@@ -404,6 +505,11 @@
         right: 12px;
       }
     }
+
+    /* ===== Scroll Collapse Overrides ===== */
+    #ai-chat-trigger.not-home .ai-btn-label {
+      display: none !important;
+    }
   `;
 
   // Add gradient def for neural links SVG
@@ -436,6 +542,306 @@
   // Event handlers
   let isOpen = false;
 
+  // Animation Closure Variables
+  let animFrameId = null;
+  let canvas = null;
+  let textEl = null;
+
+  function initNeuralAnimation(canvasElement, textContainerElement) {
+    canvas = canvasElement;
+    textEl = textContainerElement;
+    startAnimation();
+  }
+
+  function startAnimation() {
+    if (!canvas || !textEl) return;
+    if (animFrameId) {
+      cancelAnimationFrame(animFrameId);
+    }
+
+    const ctx = canvas.getContext('2d');
+    const width = 240;
+    const height = 120;
+    canvas.width = width;
+    canvas.height = height;
+
+    const centerX = width / 2;
+    const centerY = height / 2;
+
+    const NUM_PARTICLES = 160;
+    const particles = [];
+
+    // 1. Silhouette points
+    const silhouettePoints = [];
+    // Head circle (40 points)
+    for (let i = 0; i < 40; i++) {
+      const angle = (i / 40) * Math.PI * 2;
+      silhouettePoints.push({
+        x: centerX + Math.cos(angle) * 11,
+        y: centerY - 24 + Math.sin(angle) * 11,
+      });
+    }
+    // Neck (10 points)
+    for (let i = 0; i < 10; i++) {
+      silhouettePoints.push({
+        x: centerX - 3.5 + Math.random() * 7,
+        y: centerY - 13 + Math.random() * 4,
+      });
+    }
+    // Shoulders & Chest (110 points)
+    for (let i = 0; i < 110; i++) {
+      const t = Math.random();
+      const xOffset = (t * 2 - 1) * 28;
+      const yOffset = Math.random() * 30 - 6;
+      const maxW = 28 * (1 - (yOffset - 10) * (yOffset - 10) / 900);
+      const x = centerX + (Math.random() * 2 - 1) * Math.max(3, maxW);
+      const y = centerY - 9 + yOffset;
+      silhouettePoints.push({ x, y });
+    }
+
+    // 2. Creation of Adam Hands points
+    const handsPoints = [];
+    const midTouchX = centerX;
+    const midTouchY = centerY - 3;
+
+    // Left hand (Human) - Arm
+    for (let i = 0; i < 40; i++) {
+      const ratio = i / 40;
+      const x = 8 + ratio * (midTouchX - 35);
+      const y = centerY + 18 - ratio * 15 + (Math.random() * 3 - 1.5);
+      handsPoints.push({ x, y });
+    }
+    // Left pointing finger
+    for (let i = 0; i < 40; i++) {
+      const ratio = i / 40;
+      const x = (midTouchX - 35) + ratio * 30;
+      const y = (centerY + 3) - ratio * 6 + (Math.random() * 2 - 1);
+      handsPoints.push({ x, y });
+    }
+
+    // Right hand (Robotic) - Arm
+    for (let i = 0; i < 40; i++) {
+      const ratio = i / 40;
+      const x = width - 8 - ratio * (width - 8 - (midTouchX + 35));
+      const y = centerY + 18 - ratio * 15 + (Math.random() * 1.5 - 0.75);
+      handsPoints.push({ x, y });
+    }
+    // Right pointing finger
+    for (let i = 0; i < 40; i++) {
+      const ratio = i / 40;
+      const x = (midTouchX + 35) - ratio * 30;
+      const y = (centerY + 3) - ratio * 6 + (Math.random() * 1.5 - 0.75);
+      handsPoints.push({ x, y });
+    }
+
+    // 3. Sphere points (160 points)
+    const spherePoints = [];
+    for (let i = 0; i < NUM_PARTICLES; i++) {
+      const theta = Math.acos(1 - 2 * (i / NUM_PARTICLES));
+      const phi = Math.sqrt(NUM_PARTICLES * Math.PI) * theta;
+      const x3d = Math.cos(phi) * Math.sin(theta);
+      const y3d = Math.sin(phi) * Math.sin(theta);
+      const z3d = Math.cos(theta);
+      spherePoints.push({ x3d, y3d, z3d });
+    }
+
+    // Initialize particles
+    for (let i = 0; i < NUM_PARTICLES; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        size: Math.random() * 1.0 + 0.6,
+        colorIndex: Math.random() > 0.5 ? 0 : 1,
+      });
+    }
+
+    const startTime = Date.now();
+
+    function render() {
+      if (isOpen) {
+        return;
+      }
+
+      ctx.clearRect(0, 0, width, height);
+      const elapsed = (Date.now() - startTime) / 1000;
+      const time = elapsed % 10;
+
+      // Text overlay is permanently displayed via CSS
+
+      let scene = 1;
+      let p = 0;
+
+      if (time < 2) {
+        scene = 1;
+        p = 0;
+      } else if (time >= 2 && time < 4) {
+        scene = 2;
+        p = (time - 2) / 2;
+      } else if (time >= 4 && time < 6) {
+        scene = 3;
+        p = (time - 4) / 2;
+      } else if (time >= 6 && time < 7.5) {
+        scene = 4;
+        p = 1;
+      } else if (time >= 7.5 && time < 8.5) {
+        scene = 5;
+        p = (time - 7.5) / 1.0;
+      } else {
+        scene = 6;
+        p = 1;
+      }
+
+      const colors = ['#00F5D4', '#9B5DE5'];
+
+      // Morphing updates
+      particles.forEach((part, i) => {
+        let tx = part.x;
+        let ty = part.y;
+
+        if (scene === 1) {
+          const target = silhouettePoints[i] || { x: centerX, y: centerY };
+          const noiseX = Math.sin(elapsed * 2 + i) * 4;
+          const noiseY = Math.cos(elapsed * 1.5 + i) * 4;
+          tx = target.x + noiseX;
+          ty = target.y + noiseY;
+          part.x += (tx - part.x) * 0.1;
+          part.y += (ty - part.y) * 0.1;
+        } else if (scene === 2) {
+          const target = silhouettePoints[i] || { x: centerX, y: centerY };
+          const noiseX = Math.sin(elapsed * 2 + i) * (4 * (1 - p));
+          const noiseY = Math.cos(elapsed * 1.5 + i) * (4 * (1 - p));
+          tx = target.x + noiseX;
+          ty = target.y + noiseY;
+          part.x += (tx - part.x) * 0.1;
+          part.y += (ty - part.y) * 0.1;
+        } else if (scene === 3) {
+          const sPt = silhouettePoints[i] || { x: centerX, y: centerY };
+          const hPt = handsPoints[i] || { x: centerX, y: centerY };
+          tx = sPt.x + (hPt.x - sPt.x) * p;
+          ty = sPt.y + (hPt.y - sPt.y) * p;
+          part.x += (tx - part.x) * 0.15;
+          part.y += (ty - part.y) * 0.15;
+        } else if (scene === 4) {
+          const hPt = handsPoints[i] || { x: centerX, y: centerY };
+          part.x += (hPt.x - part.x) * 0.2;
+          part.y += (hPt.y - part.y) * 0.2;
+        } else if (scene === 5) {
+          const hPt = handsPoints[i] || { x: centerX, y: centerY };
+          const sp = spherePoints[i];
+          const rotSpeed = elapsed * 0.8;
+          const cosR = Math.cos(rotSpeed);
+          const sinR = Math.sin(rotSpeed);
+          const rx = sp.x3d * cosR - sp.z3d * sinR;
+          const ry = sp.y3d;
+          const sphereX = centerX + rx * 26;
+          const sphereY = centerY + ry * 26;
+          tx = hPt.x + (sphereX - hPt.x) * p;
+          ty = hPt.y + (sphereY - hPt.y) * p;
+          part.x += (tx - part.x) * 0.12;
+          part.y += (ty - part.y) * 0.12;
+        } else {
+          const sp = spherePoints[i];
+          const rotSpeed = elapsed * 0.8;
+          const cosR = Math.cos(rotSpeed);
+          const sinR = Math.sin(rotSpeed);
+          const rx = sp.x3d * cosR - sp.z3d * sinR;
+          const ry = sp.y3d;
+          const pulse = 1 + Math.sin(elapsed * 3.5) * 0.08;
+          tx = centerX + rx * 26 * pulse;
+          ty = centerY + ry * 26 * pulse;
+          part.x += (tx - part.x) * 0.25;
+          part.y += (ty - part.y) * 0.25;
+        }
+      });
+
+      // Connections
+      if (scene >= 2) {
+        ctx.lineWidth = 0.4;
+        const maxDist = scene >= 5 ? 18 : 15;
+        for (let i = 0; i < NUM_PARTICLES; i++) {
+          for (let j = i + 1; j < NUM_PARTICLES; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < maxDist) {
+              const alpha = (1 - dist / maxDist) * 0.18;
+              ctx.strokeStyle = `rgba(0, 245, 212, ${alpha})`;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+      }
+
+      // Touch Neural Pulse & Sparks
+      if (scene === 4) {
+        const pulseTime = time - 6.0;
+        if (pulseTime < 0.8) {
+          const maxRadius = 55;
+          const radius = pulseTime * (maxRadius / 0.8);
+          const alpha = 1.0 - (pulseTime / 0.8);
+
+          ctx.strokeStyle = `rgba(0, 245, 212, ${alpha * 0.7})`;
+          ctx.lineWidth = 1.5;
+          ctx.beginPath();
+          ctx.arc(midTouchX, midTouchY, radius, 0, Math.PI * 2);
+          ctx.stroke();
+
+          ctx.strokeStyle = `rgba(155, 93, 229, ${alpha * 0.5})`;
+          ctx.lineWidth = 0.8;
+          ctx.beginPath();
+          ctx.arc(midTouchX, midTouchY, radius * 0.6, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = '#00F5D4';
+        ctx.fillStyle = '#FFFFFF';
+        ctx.beginPath();
+        ctx.arc(midTouchX, midTouchY, 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        ctx.fillStyle = '#00F5D4';
+        for (let k = 0; k < 10; k++) {
+          const angle = (k / 10) * Math.PI * 2 + pulseTime * 5;
+          const dist = pulseTime * 45;
+          const sx = midTouchX + Math.cos(angle) * dist;
+          const sy = midTouchY + Math.sin(angle) * dist;
+          const sAlpha = Math.max(0, 1.0 - pulseTime * 1.5);
+          ctx.fillStyle = `rgba(0, 245, 212, ${sAlpha})`;
+          ctx.fillRect(sx - 0.75, sy - 0.75, 1.5, 1.5);
+        }
+      }
+
+      // Render Particles
+      particles.forEach((part, i) => {
+        ctx.fillStyle = colors[part.colorIndex];
+        const isFingertip = (i === 79 || i === 119);
+        if (isFingertip && scene >= 3 && scene <= 4) {
+          ctx.shadowBlur = 8;
+          ctx.shadowColor = colors[part.colorIndex];
+          ctx.beginPath();
+          ctx.arc(part.x, part.y, part.size + 1.0, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        } else {
+          ctx.beginPath();
+          ctx.arc(part.x, part.y, part.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      });
+
+      animFrameId = requestAnimationFrame(render);
+    }
+
+    render();
+  }
+
   function openChat() {
     const iframe = document.getElementById('ai-chat-frame');
     // Verify resolved URL, if not matching CHAT_URL exactly, assign it.
@@ -465,6 +871,7 @@
       modal.classList.remove('open');
       btn.style.display = 'flex';
       neuralLinks.style.display = 'block';
+      startAnimation();
     }, 300);
     isOpen = false;
   }
@@ -505,4 +912,32 @@
   document.body.appendChild(btn);
   document.body.appendChild(neuralLinks);
   document.body.appendChild(modal);
+
+  // Initialize Canvas Particle Animation above the speech bubble
+  const animCanvas = btn.querySelector('.ai-chat-canvas');
+  const animText = btn.querySelector('.ai-chat-animation-text');
+  if (animCanvas && animText) {
+    initNeuralAnimation(animCanvas, animText);
+  }
+
+  // Scroll logic to hide canvas animation and greeting bubble on other pages
+  function handleWidgetScroll() {
+    const isHome = window.scrollY < 100;
+    if (isHome) {
+      btn.classList.remove('not-home');
+      if (!animFrameId && !isOpen) {
+        startAnimation();
+      }
+    } else {
+      btn.classList.add('not-home');
+      if (animFrameId) {
+        cancelAnimationFrame(animFrameId);
+        animFrameId = null;
+      }
+    }
+  }
+
+  window.addEventListener('scroll', handleWidgetScroll);
+  // Run once after initial load delay to let entrance animations play
+  setTimeout(handleWidgetScroll, 100);
 })();

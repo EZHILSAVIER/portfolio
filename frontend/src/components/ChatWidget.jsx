@@ -7,6 +7,17 @@ import ChatMessage from "./ChatMessage";
 import TypingIndicator from "./TypingIndicator";
 import SuggestedPrompts from "./SuggestedPrompts";
 import NeuralIntro from "./NeuralIntro";
+import NeuralScene from "./NeuralScene";
+
+
+// Typewriter tagline animation constants for creative welcome screen
+const TAGLINES = [
+  "I know everything about Ezhil's projects.",
+  "Ask me about Python, ML, NLP, or FastAPI.",
+  "Explore PhishGuard, TrustCart, and Sentient Shopper.",
+  "Wired with Ezhil Savier's portfolio data."
+];
+const TYPING_SPEED = 60;
 
 /**
  * ChatWidget — The main AI chat interface component.
@@ -26,11 +37,14 @@ export default function ChatWidget() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    const seenIntro = sessionStorage.getItem("ai-chat-seen-intro") === "true";
-    if (!seenIntro) {
-      setShowIntro(true);
-    }
+    const timer = setTimeout(() => {
+      setMounted(true);
+      const seenIntro = sessionStorage.getItem("ai-chat-seen-intro") === "true";
+      if (!seenIntro) {
+        setShowIntro(true);
+      }
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   const handleIntroComplete = () => {
@@ -44,39 +58,34 @@ export default function ChatWidget() {
   const inputRef = useRef(null);
 
   // Typewriter tagline animation logic for creative welcome screen
-  const taglines = [
-    "I know everything about Ezhil's projects.",
-    "Ask me about Python, ML, NLP, or FastAPI.",
-    "Explore PhishGuard, TrustCart, and Sentient Shopper.",
-    "Wired with Ezhil Savier's portfolio data."
-  ];
   const [taglineIndex, setTaglineIndex] = useState(0);
   const [subText, setSubText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(60);
 
   useEffect(() => {
     let timer;
-    const currentFullText = taglines[taglineIndex];
+    const currentFullText = TAGLINES[taglineIndex];
 
-    if (!isDeleting) {
+    if (isDeleting) {
       timer = setTimeout(() => {
-        setSubText(currentFullText.substring(0, subText.length + 1));
-      }, typingSpeed);
+        const nextText = currentFullText.substring(0, subText.length - 1);
+        setSubText(nextText);
 
+        if (nextText === "") {
+          setIsDeleting(false);
+          setTaglineIndex((prev) => (prev + 1) % TAGLINES.length);
+        }
+      }, 25);
+    } else {
       if (subText === currentFullText) {
         timer = setTimeout(() => {
           setIsDeleting(true);
         }, 2200);
-      }
-    } else {
-      timer = setTimeout(() => {
-        setSubText(currentFullText.substring(0, subText.length - 1));
-      }, 25);
-
-      if (subText === "") {
-        setIsDeleting(false);
-        setTaglineIndex((prev) => (prev + 1) % taglines.length);
+      } else {
+        timer = setTimeout(() => {
+          const nextText = currentFullText.substring(0, subText.length + 1);
+          setSubText(nextText);
+        }, TYPING_SPEED);
       }
     }
 
@@ -215,62 +224,7 @@ export default function ChatWidget() {
             className="flex flex-col items-center justify-center h-full gap-8 py-4"
           >
             {/* Animated Welcome Core */}
-            <div className="relative w-32 h-32 flex items-center justify-center">
-              {/* Outer Orbiting Ring 1 */}
-              <div 
-                className="absolute inset-0 rounded-full border border-dashed border-[#00F5D4]/20"
-                style={{
-                  animation: "spin-slow 20s linear infinite",
-                }}
-              />
-              {/* Outer Orbiting Ring 2 */}
-              <div 
-                className="absolute inset-2 rounded-full border border-dotted border-[#7B2FBE]/40"
-                style={{
-                  animation: "spin-reverse-slow 15s linear infinite",
-                }}
-              />
-              {/* Pulsing Aura */}
-              <div 
-                className="absolute inset-6 rounded-full bg-gradient-to-r from-[#00F5D4]/10 to-[#7B2FBE]/10 blur-xl"
-                style={{
-                  animation: "glow-pulse 3s ease-in-out infinite",
-                }}
-              />
-              
-              {/* Central Glowing Core */}
-              <div
-                className="w-16 h-16 rounded-2xl flex items-center justify-center z-10"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(0,245,212,0.15), rgba(123,47,190,0.15))",
-                  border: "1px solid rgba(0,245,212,0.3)",
-                  boxShadow: "0 0 25px rgba(0,245,212,0.2), inset 0 0 10px rgba(0,245,212,0.1)",
-                  animation: "float 4s ease-in-out infinite",
-                }}
-              >
-                <svg
-                  width="30"
-                  height="30"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#00F5D4"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  style={{
-                    filter: "drop-shadow(0 0 4px #00F5D4)",
-                  }}
-                >
-                  <path d="M12 2a8 8 0 0 1 8 8c0 3.5-2 6-4 7.5V20a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.5C6 16 4 13.5 4 10a8 8 0 0 1 8-8z" />
-                  <line x1="10" y1="22" x2="14" y2="22" />
-                </svg>
-              </div>
-
-              {/* Floating connection dots */}
-              <span className="absolute top-2 left-6 w-2 h-2 rounded-full bg-[#00F5D4]/60 animate-ping" />
-              <span className="absolute bottom-4 right-5 w-1.5 h-1.5 rounded-full bg-[#7B2FBE]/60 animate-pulse" />
-            </div>
+            <NeuralScene />
  
             {/* Welcome Text with Typewriter Tagline */}
             <div className="text-center space-y-3 px-4">

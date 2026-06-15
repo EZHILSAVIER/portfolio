@@ -27,7 +27,6 @@ export default function useChat() {
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [inputValue, setInputValue] = useState("");
-  const sessionIdRef = useRef(getOrCreateSessionId());
 
   /**
    * Get existing sessionId from localStorage or create a new one.
@@ -42,6 +41,15 @@ export default function useChat() {
     }
     return sid;
   }
+
+  const [sessionId, setSessionId] = useState(getOrCreateSessionId);
+  const sessionIdRef = useRef(sessionId);
+
+  const updateSessionId = useCallback((newId) => {
+    setSessionId(newId);
+    sessionIdRef.current = newId;
+    localStorage.setItem("ai-chat-session-id", newId);
+  }, []);
 
   /**
    * Send a message and stream the AI response.
@@ -118,11 +126,7 @@ export default function useChat() {
                   );
                 } else if (data.type === "meta" && data.sessionId) {
                   // Update session ID if server assigned a new one
-                  sessionIdRef.current = data.sessionId;
-                  localStorage.setItem(
-                    "ai-chat-session-id",
-                    data.sessionId
-                  );
+                  updateSessionId(data.sessionId);
                 } else if (data.type === "error") {
                   setMessages((prev) =>
                     prev.map((msg) =>
@@ -180,7 +184,7 @@ export default function useChat() {
         setIsLoading(false);
       }
     },
-    [isLoading]
+    [isLoading, updateSessionId]
   );
 
   /**
@@ -192,9 +196,8 @@ export default function useChat() {
 
     // Generate a new session ID
     const newSessionId = uuidv4();
-    sessionIdRef.current = newSessionId;
-    localStorage.setItem("ai-chat-session-id", newSessionId);
-  }, []);
+    updateSessionId(newSessionId);
+  }, [updateSessionId]);
 
   return {
     messages,
@@ -203,6 +206,6 @@ export default function useChat() {
     setInputValue,
     sendMessage,
     clearChat,
-    sessionId: sessionIdRef.current,
+    sessionId,
   };
 }
