@@ -237,7 +237,7 @@ const baseQAs = [
   },
   {
     category: 'CONTACT & HIRING',
-    answer: `His resume is available here: https://drive.google.com/file/d/1XFAHt3sR-B6y0H3qiQFi-8ZF-xMo-Dw7/view — also linked as "VIEW RESUME" on the portfolio homepage.`,
+    answer: `His resume is available here: https://drive.google.com/file/d/1pKqLRduyzW8IAZ0ohOODVwGJICtT000C/view?usp=drive_link — also linked as "VIEW RESUME" on the portfolio homepage.`,
     templates: [
       'Where can I see [his] resume?', 'Give me [his] resume link.', 'Where is [his] resume?', 'Can I download [his] CV?',
       'Resume of [ezhil]', 'CV of [ezhil]', 'Show me [his] resume.', 'Get [his] CV.'
@@ -944,7 +944,7 @@ const baseQAs = [
   },
   {
     category: 'PORTFOLIO & WEBSITE',
-    answer: `Linked on the portfolio homepage as "VIEW RESUME": https://drive.google.com/file/d/1XFAHt3sR-B6y0H3qiQFi-8ZF-xMo-Dw7/view`,
+    answer: `Linked on the portfolio homepage as "VIEW RESUME": https://drive.google.com/file/d/1pKqLRduyzW8IAZ0ohOODVwGJICtT000C/view?usp=drive_link`,
     templates: [
       'Where is Ezhil\'s resume?', 'How to download Ezhil\'s resume?', 'resume download link for Ezhil',
       'resume document link'
@@ -1167,7 +1167,7 @@ function run() {
   output += `- **LinkedIn:** https://www.linkedin.com/in/ezhil-savier/\n`;
   output += `- **Portfolio:** https://ezhil-savier-portfolio.netlify.app/\n`;
   output += `- **GitHub:** https://github.com/EZHILSAVIER\n`;
-  output += `- **Resume:** https://drive.google.com/file/d/1XFAHt3sR-B6y0H3qiQFi-8ZF-xMo-Dw7/view\n\n`;
+  output += `- **Resume:** https://drive.google.com/file/d/1pKqLRduyzW8IAZ0ohOODVwGJICtT000C/view?usp=drive_link\n\n`;
   output += `---\n\n`;
   output += `## 🧠 COMPLETE Q&A TRAINING DATASET\n\n`;
   
